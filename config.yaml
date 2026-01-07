@@ -1,0 +1,55 @@
+# Konfiguracja Mini Hedge Fund Bot
+
+exchange:
+  id: 'binance'
+  symbol: 'BTC/USDT'
+  timeframe: '1h'
+  enable_rate_limit: true
+  
+  # API KEYS (Dla Live Trading)
+  # OSTRZEŻENIE: Nie udostępniaj nikomu swoich kluczy!
+  api_key: 'YOUR_API_KEY'
+  secret: 'YOUR_SECRET_KEY'
+
+strategy:
+  rsi_period: 14
+  ema_fast: 50
+  ema_slow: 200
+
+risk_management:
+  total_capital: 10000
+  risk_per_trade_percent: 0.02
+  leverage: 5
+  stop_loss_percent_buy: 0.02
+  stop_loss_percent_sell: 0.02
+  
+  # Advanced Risk
+  use_kelly_criterion: true
+  kelly_win_rate: 0.55
+  kelly_win_loss_ratio: 1.5
+  kelly_fraction: 0.5
+  
+  use_trailing_stop: true
+  trailing_stop_activation_pct: 0.01
+  trailing_stop_distance_pct: 0.01
+  
+  # Correlation
+  check_correlation: true
+  correlation_threshold: 0.7
+  correlation_symbol: 'ETH/USDT'
+
+execution:
+  paper_trading: true
+  loop_interval_seconds: 60
+  
+database:
+  db_path: 'hedge_fund.db'
+
+logging:
+  level: 'INFO'
+
+notifications:
+  enabled: true
+  telegram_token: ''
+  telegram_chat_id: ''
+  discord_webhook_url: ''

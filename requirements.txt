@@ -1,0 +1,9 @@
+ccxt
+aiosqlite
+pandas
+pandas_ta
+pyyaml
+matplotlib
+streamlit
+pydantic
+aiohttp
